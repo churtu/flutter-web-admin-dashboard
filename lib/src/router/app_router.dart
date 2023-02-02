@@ -15,13 +15,13 @@ class AppRouter {
   static String dashboardRoute  = '/dashboard';
 
   static void configureRoutes(){
-
-    // router.define(initialRoute, handler: handler)
-
     // Auth
-    router.define( loginRoute,    transitionType: TransitionType.none, handler: AdminHandlers.login);
     router.define( initialRoute,  transitionType: TransitionType.none, handler: AdminHandlers.login);
+    router.define( loginRoute,    transitionType: TransitionType.none, handler: AdminHandlers.login);
     router.define( registerRoute, transitionType: TransitionType.none, handler: AdminHandlers.register);
+
+    // Dashboard
+    router.define(dashboardRoute, transitionType: TransitionType.fadeIn, handler: DashboardHandlers.dashboard);
 
     // 404
 
