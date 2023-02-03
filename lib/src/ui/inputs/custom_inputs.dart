@@ -22,4 +22,16 @@ class CustomInputs{
     labelStyle: const TextStyle(color: Colors.grey),
     prefixIcon: Icon(icon, color: Colors.grey),
   );
+
+  static InputDecoration searchTextDecoration({
+    required String hint,
+    required IconData icon,
+  }) => InputDecoration(
+    border: InputBorder.none,
+    enabledBorder: InputBorder.none,
+    hintText: hint,
+    prefixIcon: Icon(icon, color: Colors.grey),
+    labelStyle: const TextStyle(color: Colors.grey),
+    hintStyle: const TextStyle(color: Colors.grey)
+  );
 }

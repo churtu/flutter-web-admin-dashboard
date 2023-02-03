@@ -23,7 +23,11 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(
           lazy: false,
           create: (context) => AuthProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (context) => SidebarProvider(),
+        ),
       ],
       child: const AdminDashboardApp(),
     );

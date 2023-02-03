@@ -32,7 +32,7 @@ class AuthProvider with ChangeNotifier {
       notifyListeners();
       return false;
     }
-    await Future.delayed(const Duration(milliseconds: 2000));
+    await Future.delayed(const Duration(milliseconds: 500));
     authStatus = AuthStatus.authenticated;
     notifyListeners();
     return true;
