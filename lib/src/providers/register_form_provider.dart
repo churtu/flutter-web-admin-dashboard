@@ -9,12 +9,6 @@ class RegisterFormProvider with ChangeNotifier {
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  void validateForm(){
-    if(formKey.currentState!.validate()){
-      print('$name -- $email -- $password');
-      return;
-    }
-    print('error');
-  }
+  bool validateForm() => formKey.currentState!.validate();
 
 }

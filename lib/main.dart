@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/src/api/cafe_api.dart';
 import 'package:admin_dashboard/src/providers/providers.dart';
 import 'package:admin_dashboard/src/services/services.dart';
 import 'package:admin_dashboard/src/ui/theme/theme.dart';
@@ -10,6 +11,7 @@ import 'package:provider/provider.dart';
 void main() async {
   AppRouter.configureRoutes();
   await LocalStorage.configurePreferences();
+  CafeApi.configureDio();
   runApp(const AppState());
 }
 
@@ -42,6 +44,7 @@ class AdminDashboardApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: NavigationService.navigatorKey,
+      scaffoldMessengerKey: NotificationsService.messengerKey,
       title: 'Admin Dashboard App',
       initialRoute: AppRouter.initialRoute,
       onGenerateRoute: AppRouter.router.generator,
