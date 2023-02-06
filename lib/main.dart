@@ -1,4 +1,5 @@
 import 'package:admin_dashboard/src/api/cafe_api.dart';
+import 'package:admin_dashboard/src/providers/categories_provider.dart';
 import 'package:admin_dashboard/src/providers/providers.dart';
 import 'package:admin_dashboard/src/services/services.dart';
 import 'package:admin_dashboard/src/ui/theme/theme.dart';
@@ -30,6 +31,9 @@ class AppState extends StatelessWidget {
           lazy: false,
           create: (context) => SidebarProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => CategoriesProvider(),
+        )
       ],
       child: const AdminDashboardApp(),
     );

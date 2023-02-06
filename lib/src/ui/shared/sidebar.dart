@@ -42,9 +42,10 @@ class Sidebar extends StatelessWidget {
               icon: Icons.show_chart_outlined,
               onPressed: () {}),
           CustomMenuItem(
+              isActive: sidebarProvider.currentPage == AppRouter.categoriesRoute,
               text: 'Categories',
               icon: Icons.layers_outlined,
-              onPressed: () {}),
+              onPressed: () => navigateTo(AppRouter.categoriesRoute)),
           CustomMenuItem(
               text: 'Products',
               icon: Icons.dashboard_outlined,
@@ -69,14 +70,15 @@ class Sidebar extends StatelessWidget {
               icon: Icons.mark_email_read_outlined,
               onPressed: () {}),
           CustomMenuItem(
+              isActive: sidebarProvider.currentPage == AppRouter.campaignRoute,
               text: 'Campaign',
               icon: Icons.note_add_outlined,
-              onPressed: () {}),
+              onPressed: () => navigateTo(AppRouter.campaignRoute)),
           CustomMenuItem(
-              isActive: sidebarProvider.currentPage == AppRouter.blankPage,
+              isActive: sidebarProvider.currentPage == AppRouter.blankRoute,
               text: 'Blank',
               icon: Icons.post_add_rounded,
-              onPressed: () => navigateTo(AppRouter.blankPage)),
+              onPressed: () => navigateTo(AppRouter.blankRoute)),
           const SizedBox(height: 50),
           const TextSeparator(text: 'Exit'),
           CustomMenuItem(

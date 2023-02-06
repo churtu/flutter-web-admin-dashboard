@@ -31,9 +31,31 @@ class DashboardHandlers {
   static Handler blank = Handler(
     handlerFunc: (context, parameters) {
       final authProvider = Provider.of<AuthProvider>(context!);
-      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.blankPage);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.blankRoute);
       if(authProvider.authStatus == AuthStatus.authenticated){
         return const BlankView(); 
+      }
+      return const LoginView();
+    },
+  );
+
+  static Handler campaign = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.campaignRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        return const CampaignView(); 
+      }
+      return const LoginView();
+    },
+  );
+
+  static Handler categories = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.categoriesRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        return const CategoriesView(); 
       }
       return const LoginView();
     },

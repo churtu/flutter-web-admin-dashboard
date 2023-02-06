@@ -32,4 +32,22 @@ class CafeApi {
     }
   }
 
+  static Future httpPut(String path, Map<String, dynamic>data) async {
+    try {
+      final formData = FormData.fromMap(data);
+      final response = await _dio.put(path, data: formData);
+      return response.data;
+    } catch (e) {
+      throw 'Error: $e';
+    }
+  }
+
+  static Future httpDelete(String path) async {
+    try {
+      final response = await _dio.delete(path);
+      return response.data;
+    } catch (e) {
+      throw 'Error: $e';
+    }
+  }
 }
