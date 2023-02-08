@@ -8,15 +8,17 @@ class Usuario {
         required this.nombre,
         required this.correo,
         required this.uid,
+        this.img
     });
 
-    final String rol;
-    final bool estado;
-    final bool google;
-    final String nombre;
-    final String correo;
-    final String uid;
-
+    String rol;
+    bool estado;
+    bool google;
+    String nombre;
+    String correo;
+    String uid;
+    String? img;
+    
     factory Usuario.fromJson(String str) => Usuario.fromMap(json.decode(str));
 
     String toJson() => json.encode(toMap());

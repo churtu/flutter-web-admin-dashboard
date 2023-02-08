@@ -71,7 +71,7 @@ class LoginView extends StatelessWidget {
                     LinkText(
                       text: 'Nueva cuenta',
                       onPressed: () {
-                        Navigator.pushNamed(context, AppRouter.registerRoute);
+                        Navigator.pushReplacementNamed(context, AppRouter.registerRoute);
                       },
                     )
                   ],

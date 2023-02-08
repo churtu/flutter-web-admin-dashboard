@@ -1,6 +1,10 @@
-export 'package:admin_dashboard/src/ui/views/categories_view.dart';
+export 'package:admin_dashboard/src/ui/views/customer_view.dart';
+export 'package:admin_dashboard/src/ui/views/analytics_view.dart';
+export 'package:admin_dashboard/src/ui/views/orders_view.dart';
 export 'package:admin_dashboard/src/ui/views/blank_view.dart';
 export 'package:admin_dashboard/src/ui/views/campaign_view.dart';
+export 'package:admin_dashboard/src/ui/views/categories_view.dart';
+export 'package:admin_dashboard/src/ui/views/customers_view.dart';
 export 'package:admin_dashboard/src/ui/views/dashboard_view.dart';
 export 'package:admin_dashboard/src/ui/views/icons_view.dart';
 export 'package:admin_dashboard/src/ui/views/login_view.dart';

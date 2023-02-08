@@ -1,13 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:admin_dashboard/src/api/cafe_api.dart';
-import 'package:admin_dashboard/src/providers/categories_provider.dart';
 import 'package:admin_dashboard/src/providers/providers.dart';
+import 'package:admin_dashboard/src/router/router.dart';
 import 'package:admin_dashboard/src/services/services.dart';
 import 'package:admin_dashboard/src/ui/theme/theme.dart';
-import 'package:flutter/material.dart';
-
-import 'package:admin_dashboard/src/router/router.dart';
 import 'package:admin_dashboard/src/ui/layouts/layouts.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
   AppRouter.configureRoutes();
@@ -33,6 +32,12 @@ class AppState extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => CategoriesProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CustomersProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CustomerFormProvider(),
         )
       ],
       child: const AdminDashboardApp(),

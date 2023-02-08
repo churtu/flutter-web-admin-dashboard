@@ -60,4 +60,51 @@ class DashboardHandlers {
       return const LoginView();
     },
   );
+
+  static Handler customers = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.customersRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        return const CustomersView(); 
+      }
+      return const LoginView();
+    },
+  );
+
+  static Handler customer = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.customerRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        if(parameters['uid']?.first != null){
+          return CustomerView(uid: parameters['uid']!.first);
+        }
+      }
+      return const LoginView();
+    },
+  );
+
+  static Handler orders = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.ordersRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        return const OrdersView(); 
+      }
+      return const LoginView();
+    },
+  );
+
+  static Handler analytics = Handler(
+    handlerFunc: (context, parameters) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      Provider.of<SidebarProvider>(context, listen: false).setCurrentPageUrl(AppRouter.analyticsRoute);
+      if(authProvider.authStatus == AuthStatus.authenticated){
+        return const AnalyticsView(); 
+      }
+      return const LoginView();
+    },
+  );
+  
 }

@@ -90,7 +90,7 @@ class RegisterView extends StatelessWidget {
                     LinkText(
                       text: 'Ir al login',
                       onPressed: () {
-                        Navigator.pushNamed(context, AppRouter.loginRoute);
+                        Navigator.pushReplacementNamed(context, AppRouter.loginRoute);
                       },
                     )
                   ],

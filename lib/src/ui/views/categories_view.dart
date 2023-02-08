@@ -1,4 +1,4 @@
-import 'package:admin_dashboard/src/data_tables/categories_datasource.dart';
+import 'package:admin_dashboard/src/data_tables/data_tables.dart';
 import 'package:admin_dashboard/src/providers/providers.dart';
 import 'package:admin_dashboard/src/ui/buttons/buttons.dart';
 import 'package:admin_dashboard/src/ui/labels/custom_labels.dart';

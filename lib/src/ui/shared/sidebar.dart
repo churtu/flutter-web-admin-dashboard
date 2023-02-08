@@ -11,7 +11,7 @@ class Sidebar extends StatelessWidget {
 
   void navigateTo(String name) {
     SidebarProvider.closeMenu();
-    NavigationService.pushNamed(name);
+    NavigationService.pushReplacementNamed(name);
   }
 
   @override
@@ -36,11 +36,14 @@ class Sidebar extends StatelessWidget {
           CustomMenuItem(
               text: 'Orders',
               icon: Icons.shopping_cart_outlined,
-              onPressed: () {}),
+              onPressed: () => navigateTo(AppRouter.ordersRoute),
+              isActive: sidebarProvider.currentPage == AppRouter.ordersRoute,
+              ),
           CustomMenuItem(
               text: 'Analytics',
               icon: Icons.show_chart_outlined,
-              onPressed: () {}),
+              onPressed: () => navigateTo(AppRouter.analyticsRoute),
+              isActive: sidebarProvider.currentPage == AppRouter.analyticsRoute),
           CustomMenuItem(
               isActive: sidebarProvider.currentPage == AppRouter.categoriesRoute,
               text: 'Categories',
@@ -57,7 +60,9 @@ class Sidebar extends StatelessWidget {
           CustomMenuItem(
               text: 'Customers',
               icon: Icons.people_alt_outlined,
-              onPressed: () {}),
+              isActive: sidebarProvider.currentPage == AppRouter.customersRoute,
+              onPressed: () => navigateTo(AppRouter.customersRoute),
+            ),
           const SizedBox(height: 30),
           const TextSeparator(text: 'UI Elements'),
           CustomMenuItem(
